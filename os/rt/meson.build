@@ -1,0 +1,16 @@
+rt_inc = include_directories('include')
+rt_src =  files(['src/chsys.c',
+		 'src/chdebug.c',
+           	 'src/chtrace.c',
+           	 'src/chvt.c',
+        	 'src/chschd.c',
+           	 'src/chthreads.c',
+           	 'src/chtm.c',
+          	 'src/chstats.c',
+           	 'src/chregistry.c',
+           	 'src/chsem.c',
+           	 'src/chmtx.c',
+           	 'src/chcond.c',
+           	 'src/chevents.c',
+           	 'src/chmsg.c',
+           	 'src/chdynamic.c'])

@@ -1,0 +1,2 @@
+subdir('osal')
+subdir('psp')

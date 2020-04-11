@@ -1,0 +1,20 @@
+subdir('LLD/ADCv3')
+subdir('LLD/CANv1')
+subdir('LLD/DACv1')
+subdir('LLD/DMAv1')
+subdir('LLD/EXTIv1')
+subdir('LLD/GPIOv3')
+subdir('LLD/I2Cv2')
+subdir('LLD/QUADSPIv1')
+subdir('LLD/RNGv1')
+subdir('LLD/RTCv2')
+subdir('LLD/SDMMCv1')
+subdir('LLD/SPIv2')
+subdir('LLD/TIMv1')
+subdir('LLD/USARTv2')
+subdir('LLD/USBv1')
+subdir('LLD/xWDGv1')
+
+subdir('STM32L4xx')
+
+hal_stm32 = hal_stm32l4
