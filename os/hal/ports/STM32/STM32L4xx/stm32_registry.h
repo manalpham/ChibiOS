@@ -701,6 +701,14 @@
 #define STM32_TIM16_IS_32BITS               FALSE
 #define STM32_TIM16_CHANNELS                2
 
+#define STM32_HAS_LPTIM1                    TRUE
+#define STM32_LPTIM1_IS_32BITS              FALSE
+#define STM32_LPTIM1_CHANNELS               0
+
+#define STM32_HAS_LPTIM2                    TRUE
+#define STM32_LPTIM2_IS_32BITS              FALSE
+#define STM32_LPTIM2_CHANNELS               0
+
 #define STM32_HAS_TIM4                      FALSE
 #define STM32_HAS_TIM5                      FALSE
 #define STM32_HAS_TIM7                      FALSE
