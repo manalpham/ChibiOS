@@ -220,6 +220,15 @@
 #define STM32_TIM8_CC_NUMBER                46
 
 /*
+ * LPTIM units.
+ */
+#define STM32_LPTIM1_HANDLER                Vector144
+#define STM32_LPTIM2_HANDLER                Vector148
+
+#define STM32_LPTIM1_NUMBER                 65
+#define STM32_LPTIM2_NUMBER                 66
+
+/*
  * USART/UART units.
  */
 #define STM32_USART1_HANDLER                VectorD4
