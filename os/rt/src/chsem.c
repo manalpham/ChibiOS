@@ -107,10 +107,6 @@ void chSemObjectInit(semaphore_t *sp, cnt_t n) {
  * @post    After invoking this function all the threads waiting on the
  *          semaphore, if any, are released and the semaphore counter is set
  *          to the specified, non negative, value.
- * @post    This function does not reschedule so a call to a rescheduling
- *          function must be performed before unlocking the kernel. Note that
- *          interrupt handlers always reschedule on exit so an explicit
- *          reschedule must not be performed in ISRs.
  *
  * @param[in] sp        pointer to a @p semaphore_t structure
  * @param[in] n         the new value of the semaphore counter. The value must
@@ -145,7 +141,6 @@ void chSemResetWithMessage(semaphore_t *sp, cnt_t n, msg_t msg) {
  * @iclass
  */
 void chSemResetWithMessageI(semaphore_t *sp, cnt_t n, msg_t msg) {
-  cnt_t cnt;
 
   chDbgCheckClassI();
   chDbgCheck((sp != NULL) && (n >= (cnt_t)0));
@@ -153,9 +148,8 @@ void chSemResetWithMessageI(semaphore_t *sp, cnt_t n, msg_t msg) {
               ((sp->cnt < (cnt_t)0) && queue_notempty(&sp->queue)),
               "inconsistent semaphore");
 
-  cnt = sp->cnt;
   sp->cnt = n;
-  while (++cnt <= (cnt_t)0) {
+  while (queue_notempty(&sp->queue)) {
     chSchReadyI(queue_lifo_remove(&sp->queue))->u.rdymsg = msg;
   }
 }
